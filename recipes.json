@@ -1,0 +1,79 @@
+{
+      "recipes": [
+        {
+          "title": "Spaghetti Carbonara",
+          "ingredients": [
+            "200g spaghetti",
+            "100g pancetta or bacon, diced",
+            "2 large eggs",
+            "50g grated Parmesan cheese",
+            "2 cloves garlic, minced",
+            "Salt and black pepper to taste"
+          ],
+          "directions": [
+            "Cook spaghetti according to package instructions until al dente. Reserve 1/2 cup of pasta water before draining.",
+            "In a skillet, cook diced pancetta or bacon until crispy. Add minced garlic and cook until fragrant.",
+            "In a bowl, whisk together eggs and grated Parmesan cheese. Season with salt and black pepper.",
+            "Add cooked spaghetti to the skillet with pancetta and garlic. Remove from heat and quickly stir in egg and cheese mixture. Add reserved pasta water as needed to create a creamy sauce.",
+            "Serve immediately, garnished with additional grated Parmesan cheese and black pepper."
+          ]
+        },
+        {
+          "title": "Chicken Stir Fry",
+          "ingredients": [
+            "2 boneless, skinless chicken breasts, sliced",
+            "2 cups mixed vegetables (bell peppers, broccoli, carrots, snap peas)",
+            "3 tablespoons soy sauce",
+            "2 tablespoons oyster sauce",
+            "2 cloves garlic, minced",
+            "1 tablespoon vegetable oil",
+            "Cooked rice, for serving"
+          ],
+          "directions": [
+            "In a large skillet or wok, heat vegetable oil over medium-high heat. Add minced garlic and sliced chicken breasts. Cook until chicken is no longer pink.",
+            "Add mixed vegetables to the skillet and stir-fry until tender-crisp.",
+            "In a small bowl, mix together soy sauce and oyster sauce. Pour over chicken and vegetables in the skillet. Stir to combine and cook for an additional 2-3 minutes.",
+            "Serve hot over cooked rice."
+          ]
+        },
+        {
+          "title": "Caprese Salad",
+          "ingredients": [
+            "2 large tomatoes, sliced",
+            "1 ball fresh mozzarella cheese, sliced",
+            "1/4 cup fresh basil leaves",
+            "2 tablespoons balsamic glaze",
+            "Extra virgin olive oil",
+            "Salt and black pepper to taste"
+          ],
+          "directions": [
+            "Arrange tomato and mozzarella slices on a serving platter, alternating between them.",
+            "Tear fresh basil leaves and scatter over the tomatoes and mozzarella.",
+            "Drizzle with balsamic glaze and extra virgin olive oil.",
+            "Season with salt and black pepper to taste.",
+            "Serve immediately as a refreshing salad or appetizer."
+          ]
+        },
+        {
+          "title": "Vegetable Curry",
+          "ingredients": [
+            "1 onion, chopped",
+            "2 cloves garlic, minced",
+            "1 tablespoon curry powder",
+            "1 can (400ml) coconut milk",
+            "2 cups mixed vegetables (potatoes, carrots, bell peppers, peas)",
+            "Salt and pepper to taste",
+            "Cooked rice, for serving"
+          ],
+          "directions": [
+            "In a large pot, heat some oil over medium heat. Add chopped onion and minced garlic. Cook until softened and fragrant.",
+            "Stir in curry powder and cook for another minute.",
+            "Add coconut milk to the pot and bring to a simmer.",
+            "Add mixed vegetables to the pot and cook until tender.",
+            "Season with salt and pepper to taste.",
+            "Serve hot over cooked rice."
+          ]
+        }
+      ]
+    }
+    
