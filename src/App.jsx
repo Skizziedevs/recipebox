@@ -1,66 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFire } from '@fortawesome/free-solid-svg-icons'
-import { faTrash } from '@fortawesome/free-solid-svg-icons'
-import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFire, faTrash, faPenToSquare, faPlus } from '@fortawesome/free-solid-svg-icons';
 import EditRecipeModal from './components/EditRecipeModal';
 import AddRecipeModal from './components/AddRecipeModal';
-
+import recipesData from './recipes.json'; // Import recipes directly
 
 function App() {
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState(recipesData.recipes);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [showEditModal, setShowEditModal] = useState(false);
   const [showAddModal, setShowAddModal] = useState(false);
 
-
-
-  useEffect(() => {
-    const fetchRecipes = async () => {
-      try {
-        // Fetch recipes data from the JSON file
-        const response = await fetch('../recipes.json');
-        const data = await response.json();
-  
-        // Update recipes state
-        setRecipes(data.recipes);
-  
-        // Select a random recipe
-        const randomIndex = Math.floor(Math.random() * data.recipes.length);
-        setSelectedRecipe(data.recipes[randomIndex]);
-  
-        // Save recipes to local storage
-        localStorage.setItem('recipes', JSON.stringify(data.recipes));
-      } catch (error) {
-        console.error('Error fetching recipes:', error);
-      }
-    };
-  
-    const storedRecipes = localStorage.getItem('recipes');
-    if (storedRecipes) {
-      // Parse and set recipes from local storage
-      const parsedRecipes = JSON.parse(storedRecipes);
-      setRecipes(parsedRecipes);
-  
-      // Select a random recipe
-      const randomIndex = Math.floor(Math.random() * parsedRecipes.length);
-      setSelectedRecipe(parsedRecipes[randomIndex]);
-    } else {
-      // Fetch recipes if no recipes found in local storage
-      fetchRecipes();
-    }
-  }, []);
   const handleRecipeClick = (index) => {
     setSelectedRecipe(recipes[index]);
   };
 
+  useEffect(() => {
+    // Set recipes data from imported JSON
+    setRecipes(recipesData.recipes);
+
+    // Select a random recipe on component mount
+    const randomIndex = Math.floor(Math.random() * recipesData.recipes.length);
+    setSelectedRecipe(recipesData.recipes[randomIndex]);
+  }, []);
+
   const handleDeleteRecipe = () => {
     if (window.confirm('Are you sure you want to delete this recipe?')) {
       const updatedRecipes = recipes.filter(recipe => recipe !== selectedRecipe);
-      const randomIndex = Math.floor(Math.random() * updatedRecipes.length);
-      setSelectedRecipe(updatedRecipes[randomIndex]);
+      setSelectedRecipe(null); // Clear selected recipe
       setRecipes(updatedRecipes);
     }
   };
@@ -79,7 +47,6 @@ function App() {
     setRecipes(updatedRecipes);
     setSelectedRecipe(editedRecipe);
     setShowEditModal(false);
-    localStorage.setItem('recipes', JSON.stringify(updatedRecipes)); // Store updated recipes
   };
 
   const handleCancelEdit = () => {
@@ -95,8 +62,8 @@ function App() {
     setRecipes(updatedRecipes);
     setSelectedRecipe(newRecipe);
     setShowAddModal(false);
-    localStorage.setItem('recipes', JSON.stringify(updatedRecipes)); // Store updated recipes
   };
+
   const handleCancelAdd = () => {
     setShowAddModal(false);
   };
@@ -126,7 +93,7 @@ function App() {
               <FontAwesomeIcon icon={faPenToSquare} className='icon' onClick={handleEditRecipe} />
             </div>
             <div className='mid'>
-              <div >
+              <div>
                 <h3>Ingredients</h3>
                 <ul>
                   {selectedRecipe.ingredients.map((ingredient, idx) => (

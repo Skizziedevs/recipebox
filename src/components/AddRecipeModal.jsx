@@ -55,7 +55,7 @@ const AddRecipeModal = ({ onSave, onCancel }) => {
         ></textarea>
         <div>
           <button onClick={handleSave}>Save</button>
-          <button onClick={onCancel}>Cancel</button>
+          <button onClick={onCancel} className='cancle'>Cancel</button>
         </div>
       </div>
     </div>
