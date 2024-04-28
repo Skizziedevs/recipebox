@@ -40,7 +40,7 @@ body{
 /* Scrollable list styles */
 .scrollable-list {
   height: 130px;
-  width: 400px;
+  width: 330px;
   margin: 0 auto; /* Center the list horizontally */
   overflow-y: auto; /* Enable vertical scrollbar when content exceeds height */
   border: 1px solid #ccc;
@@ -69,7 +69,7 @@ body{
 /* Main container styles */
 .main {
   min-height: 430px;
-  width: 400px;
+  width: 330px;
   border: 1px solid grey;
   margin: 0 auto; /* Center the container horizontally */
   border-radius: 10px;
@@ -86,12 +86,12 @@ body{
 
 /* Icon styles */
 .icon2 {
-  font-size: 32px;
+  font-size: 28px;
   
   color: #481D24;
 }
 .icon{
-  font-size: 32px;
+  font-size: 28px;
   padding-left: 10px;
   color: #481D24;
 }
@@ -116,7 +116,7 @@ body{
 .one h1 {
   margin: 0;
   color: white;
-  font-size: 32px;
+  font-size: 27px;
   margin-left: 20px; /* Add left margin for space between icon and title */
 }
 
@@ -193,6 +193,32 @@ body{
 }
 
 /* CSS Media Queries */
+@media screen and (min-width: 400px) and (max-width: 600px) {
+  .scrollable-list,
+  .main {
+    width: 400px;
+  }
+  .scrollable-list{
+    width: 400px;
+  }
+  .one h1 {
+   
+    color: white;
+    font-size: 32px;
+    margin-left: 20px; /* Add left margin for space between icon and title */
+  }
+  .icon2 {
+    font-size: 32px;
+    
+    color: #481D24;
+  }
+  .icon{
+    font-size: 32px;
+    padding-left: 10px;
+    color: #481D24;
+  }
+}
+
 @media screen and (min-width: 601px) and (max-width: 900px) {
   .scrollable-list,
   .main {
