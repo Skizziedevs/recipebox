@@ -7,7 +7,7 @@ import AddRecipeModal from './components/AddRecipeModal';
 import recipesData from './recipes.json'; // Import recipes directly
 
 function App() {
-  const [recipes, setRecipes] = useState(recipesData.recipes);
+  const [recipes, setRecipes] = useState(JSON.parse(localStorage.getItem('recipes')) || [recipesData] );
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [showEditModal, setShowEditModal] = useState(false);
   const [showAddModal, setShowAddModal] = useState(false);
@@ -18,12 +18,14 @@ function App() {
 
   useEffect(() => {
     // Set recipes data from imported JSON
-    setRecipes(recipesData.recipes);
-
+    
+localStorage.setItem('recipes', JSON.stringify(recipes));
     // Select a random recipe on component mount
     const randomIndex = Math.floor(Math.random() * recipesData.recipes.length);
     setSelectedRecipe(recipesData.recipes[randomIndex]);
-  }, []);
+  }, [recipes]);
+  
+
 
   const handleDeleteRecipe = () => {
     if (window.confirm('Are you sure you want to delete this recipe?')) {
@@ -136,3 +138,7 @@ function App() {
 }
 
 export default App;
+
+
+
+

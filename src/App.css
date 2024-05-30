@@ -68,7 +68,7 @@ body{
 
 /* Main container styles */
 .main {
-  min-height: 430px;
+  min-height: 470px;
   width: 330px;
   border: 1px solid grey;
   margin: 0 auto; /* Center the container horizontally */
@@ -127,6 +127,7 @@ body{
   border-radius: 0 0 10px 10px; /* Apply border radius only to bottom */
   display: flex;
  padding-left: 20px;
+ margin-top: 30px;
   align-items: center; 
 }
 
